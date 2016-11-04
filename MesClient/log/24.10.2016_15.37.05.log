@@ -1,0 +1,19 @@
+24.10.2016 15.37.05 ---> [S] ************************************************** PROGRAMMA AVVIATO ****************************************************
+24.10.2016 15.37.05 ---> [I] Indirizzo centro di lavoro: [ 192.168.102.157/192.168.56.1 ]
+24.10.2016 15.37.05 ---> [I] Nome centro di lavoro: [ IL0001 ]
+24.10.2016 15.37.05 ---> [I] Descrizione centro di lavoro: [ ISAOLA PIPPO ]
+24.10.2016 15.37.05 ---> [I] Ambiente: [ Test ]
+24.10.2016 15.37.05 ---> [I] Modalità centro di lavoro: [ Macchina ]
+24.10.2016 15.37.05 ---> [I] Abilitazione modalità multi ordine: [ 1 ]
+24.10.2016 15.37.05 ---> [I] Operatore aggregato al centro di lavoro: [ 10345 ]
+24.10.2016 15.37.05 ---> [E] ----------------------------------------------------------------------------------------------------
+24.10.2016 15.37.05 ---> [E] Errore in classe: [ ResourceDialog.GetData() ]
+24.10.2016 15.37.05 ---> [E] ORA-00904: "PDALPH": identificativo non valido
+
+24.10.2016 15.37.05 ---> [E] SELECT TRIM(IMUKID),       (ISALPH),       DECODE(USYQ10USST,NULL,0,USYQ10USST),       IMAN8,       DECODE(TRIM(USMMCU),NULL,' ',TRIM(USMMCU)),       DECODE(USDOCO,NULL,' ',USDOCO),       DECODE((SELECT TRIM(WADL01) FROM F4801 WHERE WADOCO = USDOCO),NULL,' ',(SELECT TRIM(WADL01) FROM F4801 WHERE WADOCO = USDOCO)),       DECODE(USOPSQ,NULL,' ',USOPSQ),       CASE        WHEN USDTUP IS NULL THEN        'NESSUN EVENTO REGISTRATO'        ELSE        TO_CHAR((CAST((FROM_TZ(CAST(TO_DATE(TO_CHAR(USDTUP,'DD/MM/YYYY HH24.MI.SS'),'DD/MM/YYYY HH24.MI.SS') AS TIMESTAMP),'GMT') AT TIME ZONE 'Europe/Rome') AS DATE)),'DD/MM/YYYY HH24.MI.SS')        END,       DECODE(USURAB,NULL,' ',USURAB),       TRIM(ISDEPT),       TRIM(USALPH),       TRIM(USALPH1),       DECODE(TRIM(USLITM),NULL,' ',TRIM(USLITM)),       DECODE((SELECT TRIM(IMDSC1) FROM F4101 WHERE IMITM = (SELECT WAITM FROM F4801 WHERE WADOCO = USDOCO)),NULL,' ',(SELECT TRIM(IMDSC1) FROM F4101 WHERE IMITM = (SELECT WAITM FROM F4801 WHERE WADOCO = USDOCO))),       DECODE(TRIM(USOPSQDSC1),NULL,' ',TRIM(USOPSQDSC1)),       DECODE(USPRJM,NULL,' ',USPRJM),       DECODE((SELECT TRIM(ABALPH) FROM F0101 WHERE ABAN8 = (SELECT WAAN8 FROM F4801 WHERE WADOCO = USPRJM)),NULL,' ',(SELECT TRIM(ABALPH) FROM F0101 WHERE ABAN8 = (SELECT WAAN8 FROM F4801 WHERE WADOCO = USPRJM))),       TRIM(PDALPH),       DECODE((SELECT TRIM(MCDL01) FROM F0006 WHERE MCMCU = USMMCU),NULL,' ',(SELECT TRIM(MCDL01) FROM F0006 WHERE MCMCU = USMMCU)),       DECODE((SELECT TRIM(WLMCU) FROM F3112 WHERE WLDOCO = USDOCO AND WLOPSQ = USOPSQ),NULL,' ',(SELECT TRIM(WLMCU) FROM F3112 WHERE WLDOCO = USDOCO AND WLOPSQ = USOPSQ)),       (SELECT TRIM(MCDL01) FROM F0006 WHERE MCMCU = (SELECT WLMCU FROM F3112 WHERE WLDOCO = USDOCO AND WLOPSQ = USOPSQ))   FROM F55FQ10008   LEFT JOIN F55FQ10006 ON (ISUKID = IMUKID)   LEFT JOIN F55FQ10009 ON (ISDEPT = DPDEPT)  LEFT JOIN F55FQ10002 ON (IMAN8 = USAN8 AND IMUKID = USISL)  WHERE TRIM(IMUKID) = ?    AND IMAN8 = ?  ORDER BY USDOCO
+24.10.2016 15.37.05 ---> [E] ----------------------------------------------------------------------------------------------------
+24.10.2016 15.37.05 ---> [E] ----------------------------------------------------------------------------------------------------
+24.10.2016 15.37.05 ---> [E] Errore in classe: [ TableButtonEditor.getCellEditorValue() ]
+24.10.2016 15.37.05 ---> [E] null
+24.10.2016 15.37.05 ---> [E] ----------------------------------------------------------------------------------------------------
+24.10.2016 15.37.05 ---> [F] ************************************************** PROGRAMMA TERMINATO **************************************************
